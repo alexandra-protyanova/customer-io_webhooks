@@ -16,7 +16,7 @@ export class EventsController {
         console.log('Event received:', payload);
 
         const webhook = this.webhookEntityRepository.create({
-          email: payload?.data?.identifiers?.email,
+          email: payload?.data?.identifiers?.email || '',
           data: payload,
         });
 
